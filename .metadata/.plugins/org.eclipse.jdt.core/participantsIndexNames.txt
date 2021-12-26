@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\141730439.index
+\gerenciador\src\main\java
