@@ -7,3 +7,14 @@ org.eclipse.core.runtime.CoreException: Can't read Maven project
 	at org.eclipse.m2e.editor.pom.MavenPomEditor$3.run(MavenPomEditor.java:936)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 2021-12-26 11:52:34,525 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-12-26 21:29:58,116 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2021-12-26 21:30:06,130 [Worker-179: Launching gerenciador] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\gerenciador
+2021-12-26 21:30:07,573 [Worker-179: Launching gerenciador] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2021-12-26 21:30:28,043 [Worker-178: Launching Executing install in C__Users_Acer_Documents_MeusProjetos_Spring-Boot-Alura_gerenciador] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\gerenciador
+2021-12-26 21:30:28,043 [Worker-178: Launching Executing install in C__Users_Acer_Documents_MeusProjetos_Spring-Boot-Alura_gerenciador] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2021-12-26 21:38:00,244 [Worker-168: Launching Executing install in C__Users_Acer_Documents_MeusProjetos_Spring-Boot-Alura_gerenciador] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\gerenciador
+2021-12-26 21:38:00,249 [Worker-168: Launching Executing install in C__Users_Acer_Documents_MeusProjetos_Spring-Boot-Alura_gerenciador] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2021-12-27 05:23:22,743 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-12-27 20:45:29,363 [Worker-19: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-12-28 05:20:55,144 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-12-28 20:47:33,626 [Worker-15: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
