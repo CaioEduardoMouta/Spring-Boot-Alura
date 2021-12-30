@@ -1,3 +1,7 @@
 INDEX VERSION 1.131
+C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3216619146.index
+\gerenciador\src\main\java
 C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\141730439.index
+\gerenciador\src\main\java
+C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2926684230.index
 \gerenciador\src\main\java
