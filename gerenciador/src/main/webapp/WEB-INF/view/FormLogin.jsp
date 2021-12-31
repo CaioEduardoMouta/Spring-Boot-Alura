@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
+	
+	
 	<form action="${linkEntradaServlet}" method="POST">
 	
 		Login: <input type="text" name="login" >
