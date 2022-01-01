@@ -18,6 +18,10 @@ import javax.servlet.http.HttpSession;
 @WebFilter("/entrada")
 public class AutorizacaoFilter implements Filter {
 
+	@Override
+		public void init(FilterConfig filterConfig) throws ServletException {
+			
+		}
 
 
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
