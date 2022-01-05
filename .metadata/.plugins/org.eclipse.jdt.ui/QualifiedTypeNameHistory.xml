@@ -13,4 +13,6 @@
     <fullyQualifiedTypeName name="br.com.alura.gerenciador.modelo.Banco"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="br.com.alura.gerenciador.modelo.Empresa"/>
+    <fullyQualifiedTypeName name="com.mchange.v2.c3p0.ComboPooledDataSource"/>
+    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 </qualifiedTypeNameHistroy>
