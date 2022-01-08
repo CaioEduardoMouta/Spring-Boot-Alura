@@ -12,7 +12,6 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="br.com.alura.gerenciador.modelo.Banco"/>
     <fullyQualifiedTypeName name="br.com.alura.gerenciador.modelo.Empresa"/>
-    <fullyQualifiedTypeName name="com.mchange.v2.c3p0.ComboPooledDataSource"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="ConnectionFactory"/>
@@ -27,4 +26,5 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
     <fullyQualifiedTypeName name="view.ProdutoCategoriaFrame"/>
+    <fullyQualifiedTypeName name="com.mchange.v2.c3p0.ComboPooledDataSource"/>
 </qualifiedTypeNameHistroy>
