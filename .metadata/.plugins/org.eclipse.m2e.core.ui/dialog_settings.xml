@@ -18,6 +18,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\loja-virtual-view-repository"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -29,6 +30,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -59,12 +61,17 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="loja-virtual-view-"/>
+			<item value="loja-virtual-view-repository"/>
 			<item value="loja-virtual"/>
 		</list>
 		<list key="name">
+			<item value="loja-virtual-view-repository"/>
 			<item value="loja-virtual"/>
 		</list>
 		<list key="artifactId">
+			<item value="loja-virtual-view-"/>
+			<item value="loja-virtual-view-repository"/>
 			<item value="loja-virtual"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -74,6 +81,44 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\loja-virtual-view-repository"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="loja-virtual-view-repository"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="loja-virtual-view-repository"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
