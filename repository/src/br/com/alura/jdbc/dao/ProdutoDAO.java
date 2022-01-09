@@ -19,7 +19,7 @@ public class ProdutoDAO {
 		this.connection = connection;
 	}
 
-	public void salvar(Produto produto) throws SQLException {
+	public void salvar(Produto produto)  {
 		String sql = "INSERT INTO PRODUTO (NOME, DESCRICAO) VALUES (?, ?)";
 
 		try (PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -34,10 +34,12 @@ public class ProdutoDAO {
 					produto.setId(rst.getInt(1));
 				}
 			}
+		} catch (SQLException e) {
+			throw new RuntimeException("erro ao cadastrar produto", e);
 		}
 	}
 
-	public void salvarComCategoria(Produto produto) throws SQLException {
+	public void salvarComCategoria(Produto produto)  {
 		String sql = "INSERT INTO PRODUTO (NOME, DESCRICAO, CATEGORIA_ID) VALUES (?, ?, ?)";
 
 		try (PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -53,10 +55,13 @@ public class ProdutoDAO {
 					produto.setId(rst.getInt(1));
 				}
 			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
-	public List<Produto> listar() throws SQLException {
+	public List<Produto> listar()  {
 		List<Produto> produtos = new ArrayList<Produto>();
 		String sql = "SELECT ID, NOME, DESCRICAO FROM PRODUTO";
 
@@ -64,11 +69,14 @@ public class ProdutoDAO {
 			pstm.execute();
 
 			trasformarResultSetEmProduto(produtos, pstm);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return produtos;
 	}
 
-	public List<Produto> buscar(Categoria ct) throws SQLException {
+	public List<Produto> buscar(Categoria ct)  {
 		List<Produto> produtos = new ArrayList<Produto>();
 		String sql = "SELECT ID, NOME, DESCRICAO FROM PRODUTO WHERE CATEGORIA_ID = ?";
 
@@ -77,24 +85,33 @@ public class ProdutoDAO {
 			pstm.execute();
 
 			trasformarResultSetEmProduto(produtos, pstm);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return produtos;
 	}
 
-	public void deletar(Integer id) throws SQLException {
+	public void deletar(Integer id)  {
 		try (PreparedStatement stm = connection.prepareStatement("DELETE FROM PRODUTO WHERE ID = ?")) {
 			stm.setInt(1, id);
 			stm.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
-	public void alterar(String nome, String descricao, Integer id) throws SQLException {
+	public void alterar(String nome, String descricao, Integer id)  {
 		try (PreparedStatement stm = connection
 				.prepareStatement("UPDATE PRODUTO P SET P.NOME = ?, P.DESCRICAO = ? WHERE ID = ?")) {
 			stm.setString(1, nome);
 			stm.setString(2, descricao);
 			stm.setInt(3, id);
 			stm.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

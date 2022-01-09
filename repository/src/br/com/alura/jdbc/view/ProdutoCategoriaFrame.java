@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -33,7 +34,7 @@ public class ProdutoCategoriaFrame extends JFrame {
 	private ProdutoController produtoController;
 	private CategoriaController categoriaController;
 
-	public ProdutoCategoriaFrame() {
+	public ProdutoCategoriaFrame() throws SQLException {
 		super("Produtos");
 		Container container = getContentPane();
 		setLayout(null);
