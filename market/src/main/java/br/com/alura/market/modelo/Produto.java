@@ -29,6 +29,10 @@ public class Produto {
 	@ManyToOne
 	private Categoria categoria;
 	
+	public Produto() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 	

@@ -61,6 +61,7 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="br.com.alura"/>
 			<item value="loja-virtual-view-"/>
 			<item value="loja-virtual-view-repository"/>
 			<item value="loja-virtual"/>
@@ -70,6 +71,7 @@
 			<item value="loja-virtual"/>
 		</list>
 		<list key="artifactId">
+			<item value="market"/>
 			<item value="loja-virtual-view-"/>
 			<item value="loja-virtual-view-repository"/>
 			<item value="loja-virtual"/>
@@ -113,11 +115,13 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="repository"/>
 			<item value="loja-virtual-view-repository"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="repository"/>
 			<item value="loja-virtual-view-repository"/>
 		</list>
 		<list key="version">
