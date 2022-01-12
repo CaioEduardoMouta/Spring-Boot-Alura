@@ -2,6 +2,7 @@ package br.com.alura.market.modelo;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ public class ItemPedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+	@Column(name = "preco_unitario")
 	private BigDecimal precoUnitario;
 	private int quantidade;
 	@ManyToOne
@@ -77,5 +78,8 @@ public class ItemPedido {
 		this.produto = produto;
 	}
 	
+	public BigDecimal getValor() {
+		return precoUnitario.multiply(new BigDecimal(quantidade));
+	}
 	
 }
