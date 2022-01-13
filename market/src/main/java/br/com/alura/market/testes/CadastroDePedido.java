@@ -15,6 +15,7 @@ import br.com.alura.market.modelo.ItemPedido;
 import br.com.alura.market.modelo.Pedido;
 import br.com.alura.market.modelo.Produto;
 import br.com.alura.market.util.JPAUtil;
+import br.com.alura.market.vo.RelatorioDeVendasVo;
 
 public class CadastroDePedido {
 	
@@ -42,14 +43,19 @@ public class CadastroDePedido {
 		BigDecimal totalVendido = pedidoDAO.valorTotalVendido();
 		System.out.println("Valor total " +totalVendido);
 		
-		List<Object[]> relatorio = pedidoDAO.relatorioDeVendas();
+		List<RelatorioDeVendasVo> relatorio = pedidoDAO.relatorioDeVendas();
+		relatorio.forEach(System.out::println);
 	}
 	
 	private static void popularBancoDeDados() {
 		Categoria celulares = new Categoria("CELULARES");
+		Categoria videogames = new Categoria("VIDEOGAMES");
+		Categoria informatica = new Categoria("INFORMATICA");
 		
 		Produto celular = new Produto("Xiaomi","bom",new BigDecimal("800"), celulares);
-		
+		Produto videogame = new Produto("PS5","Playstation 5",new BigDecimal("800"), videogames);
+		Produto lenovo = new Produto("Lenovo","lenovo",new BigDecimal("800"), informatica);
+
 		Cliente cliente = new Cliente("Caio","234232");
 		
 		EntityManager em = JPAUtil.geEntityManager();
@@ -60,6 +66,8 @@ public class CadastroDePedido {
 		em.getTransaction().begin();
 		
 		categoriaDAO.cadastrar(celulares);
+		categoriaDAO.cadastrar(videogames);
+		categoriaDAO.cadastrar(informatica);
 		produtoDAO.cadastrar(celular);
 		clienteDAO.cadastrar(cliente);
 		
