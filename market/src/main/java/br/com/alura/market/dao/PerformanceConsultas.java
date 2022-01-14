@@ -2,7 +2,7 @@ package br.com.alura.market.dao;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Entity;
+
 import javax.persistence.EntityManager;
 
 import br.com.alura.market.modelo.Categoria;
@@ -17,8 +17,11 @@ public class PerformanceConsultas {
 	public static void main(String[] args) {
 		popularBancoDeDados();
 		EntityManager em = JPAUtil.geEntityManager();
-		Pedido pedido = em.find(Pedido.class, 1l);
-		System.out.println(pedido.getItens().size());
+		PedidoDAO pedidoDAO = new PedidoDAO(em);
+		Pedido pedido = pedidoDAO.buscarPedidoComCliente(1l);
+	
+		em.close();
+		System.out.println(pedido.getCliente().getNome());
 	}
 	
 	private static void popularBancoDeDados() {

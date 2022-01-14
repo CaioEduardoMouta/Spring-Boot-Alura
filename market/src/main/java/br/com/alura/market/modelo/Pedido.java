@@ -30,7 +30,7 @@ public class Pedido {
 	private LocalDate data = LocalDate.now();
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	private Cliente cliente;
 	
 	
