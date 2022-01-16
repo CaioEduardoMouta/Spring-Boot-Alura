@@ -71,9 +71,9 @@ INDEX VERSION 1.131+C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\.meta
 3654733529.index
 2285479918.index
 2117635682.index
-2032698430.index
-880256866.index
 1777493849.index
+880256866.index
+2032698430.index
 4119818274.index
 3353994673.index
 3717173845.index
