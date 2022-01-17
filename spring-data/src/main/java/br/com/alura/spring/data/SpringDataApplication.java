@@ -11,6 +11,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import br.com.alura.spring.data.orm.Cargo;
 import br.com.alura.spring.data.repository.CargoRepository;
 import br.com.alura.spring.data.service.CrudCargoService;
+import br.com.alura.spring.data.service.CrudFuncionarioService;
+import br.com.alura.spring.data.service.CrudUnidadeDeTrabalhoService;
+import br.com.alura.spring.data.service.RelatorioService;
 
 
 
@@ -19,13 +22,23 @@ import br.com.alura.spring.data.service.CrudCargoService;
 public class SpringDataApplication implements CommandLineRunner  {
 
 	private final CrudCargoService cargoService;
+	private final CrudFuncionarioService funcionarioService;
+	private final CrudUnidadeDeTrabalhoService unidadeDeTrabalhoService;
+	private final RelatorioService relatorioService;
 	
 	private Boolean system = true;
 	
-	public SpringDataApplication(CrudCargoService cargoService) {
-		this.cargoService = cargoService;
-	}
 	
+
+	
+	public SpringDataApplication(CrudCargoService cargoService, CrudFuncionarioService funcionarioService,
+			CrudUnidadeDeTrabalhoService unidadeDeTrabalhoService, RelatorioService relatorioService) {
+		this.cargoService = cargoService;
+		this.funcionarioService = funcionarioService;
+		this.unidadeDeTrabalhoService = unidadeDeTrabalhoService;
+		this.relatorioService = relatorioService;
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDataApplication.class, args);
 	}
@@ -38,12 +51,28 @@ public class SpringDataApplication implements CommandLineRunner  {
 			System.out.println("Qual ação você que executar");
 			System.out.println("0-Sair");
 			System.out.println("1-Cargo");
+			System.out.println("2-Funcinario");
+			System.out.println("3-Unidade Trabalho");
+			System.out.println("4-Relatorios");
+			
 			
 			int action = scanner.nextInt();
-			if(action == 1) {
+			
+			switch (action) {
+			case 1:
 				cargoService.inicial(scanner);
-			} else {
-				system = false;
+				break;
+			case 2: 
+				funcionarioService.inicial(scanner);
+				break;
+			case 3:
+				unidadeDeTrabalhoService.inicial(scanner);
+				break;
+			case 4:
+				relatorioService.inicial(scanner);
+				break;
+			default:
+				break;
 			}
 		}
 		
