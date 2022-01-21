@@ -18,6 +18,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\spring-data"/>
 			<item value="C:\Users\Acer\Documents\MeusProjetos\Spring-Boot-Alura\loja-virtual-view-repository"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -61,20 +62,16 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="mvc"/>
+			<item value="br.com.alura.mvc"/>
 			<item value="br.com.alura"/>
-			<item value="loja-virtual-view-"/>
-			<item value="loja-virtual-view-repository"/>
-			<item value="loja-virtual"/>
 		</list>
 		<list key="name">
-			<item value="loja-virtual-view-repository"/>
-			<item value="loja-virtual"/>
 		</list>
 		<list key="artifactId">
-			<item value="market"/>
-			<item value="loja-virtual-view-"/>
-			<item value="loja-virtual-view-repository"/>
-			<item value="loja-virtual"/>
+			<item value="mudi"/>
+			<item value="br.com.alura.mvc"/>
+			<item value="spring-data"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -103,6 +100,7 @@
 	</section>
 	<section name="MavenModuleWizardParentPage">
 		<list key="moduleName">
+			<item value="br.com.alura.mvc"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
