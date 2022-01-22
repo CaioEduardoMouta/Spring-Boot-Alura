@@ -1,4 +1,4 @@
-package br.com.alura.mvc.controller;
+package br.com.alura.mvc.mudi.controller;
 
 
 

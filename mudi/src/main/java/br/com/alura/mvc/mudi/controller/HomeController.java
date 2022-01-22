@@ -1,4 +1,4 @@
-package br.com.alura.mvc.controller;
+package br.com.alura.mvc.mudi.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.com.alura.mvc.model.Pedido;
+import br.com.alura.mvc.mudi.model.Pedido;
 
 @Controller
 public class HomeController {
@@ -22,6 +22,7 @@ public class HomeController {
 		
 		List<Pedido> pedidos = Arrays.asList(pedido);
 		model.addAttribute("pedidos",pedidos);
+		
 		return "home";
 	}
 	
