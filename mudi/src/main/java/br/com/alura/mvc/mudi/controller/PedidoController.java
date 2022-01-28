@@ -14,7 +14,7 @@ import br.com.alura.mvc.mudi.model.Pedido;
 import br.com.alura.mvc.mudi.repository.PedidoRepository;
 
 @Controller
-@RequestMapping
+@RequestMapping("pedido")
 public class PedidoController {
 	
 	@Autowired

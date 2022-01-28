@@ -1,0 +1,20 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	
+	<body>
+		<div th:replace="~{base :: logo}"></div>
+				
+			<div class="container">
+				<div th:replace="~{base :: titulo('Login')}"></div>
+			
+			
+				<div class="card mb-3" >
+					<form th:action="@{/login}" method="post">
+						<label for="nomeProduto">Produto</label>
+						<input name="username" th:errorclass="is-invalid" class="form-control" name="nomeProduto" placeholder="nome do produto"/>
+					</form>
+					
+				</div>
+			</div>	
+	</body>
+</html>
