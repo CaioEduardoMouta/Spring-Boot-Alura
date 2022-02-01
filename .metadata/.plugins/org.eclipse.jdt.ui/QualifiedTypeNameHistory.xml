@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="br.com.alura.spring.data.orm.FuncionarioProjecao"/>
-    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaSpecificationExecutor"/>
-    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
     <fullyQualifiedTypeName name="br.com.alura.spring.data.repository.FuncionarioRepository"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="br.com.alura.spring.data.orm.Funcionario"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="br.com.alura.mvc.mudi.model.Pedido"/>
     <fullyQualifiedTypeName name="br.com.alura.mvc.mudi.repository.UserRepository"/>
     <fullyQualifiedTypeName name="br.com.alura.mvc.mudi.model.User"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
 </qualifiedTypeNameHistroy>
