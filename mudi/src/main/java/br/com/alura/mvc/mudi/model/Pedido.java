@@ -2,7 +2,9 @@ package br.com.alura.mvc.mudi.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,6 +14,9 @@ import javax.persistence.GenerationType;
 
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Pedido {
@@ -30,8 +35,11 @@ public class Pedido {
 	private StatusPedido status;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
 	private User user;
-	
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy ="pedido", fetch = FetchType.LAZY)
+	private List<Oferta> ofertas;
 	
 	public String getNomeProduto() {
 		return nomeProduto;
