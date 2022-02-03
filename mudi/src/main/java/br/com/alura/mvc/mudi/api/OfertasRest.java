@@ -25,6 +25,15 @@ public class OfertasRest {
 		if(!pedidoBuscado.isPresent()) {
 			return null;
 		}
-		Oferta nova = requisicao.toOferta()
+		
+		Pedido pedido = pedidoBuscado.get();
+		
+		Oferta nova = requisicao.toOferta();
+		
+		nova.setPedido(pedido);
+		pedido.getOfertas().add(nova);
+		pedidoRepository.save(pedido);
+		
+		return nova;
 	}
 }

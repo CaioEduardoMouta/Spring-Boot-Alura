@@ -1,5 +1,6 @@
 package br.com.alura.mvc.mudi.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.websocket.Decoder.Text;
@@ -52,8 +53,8 @@ public class RequisicaoNovaOferta {
 	public Oferta toOferta() {
 		Oferta oferta = new Oferta();
 		oferta.setComentario(this.comentario);
-		oferta.setDataDaEntrega(LocalDate.parse(this.dataDaEntrega,this.dataDaEntrega));
+		oferta.setDataDaEntrega(LocalDate.parse(this.dataDaEntrega, formatter));
 		oferta.setValor(new BigDecimal(this.valor));
-		return null;
+		return oferta;
 	}
 }

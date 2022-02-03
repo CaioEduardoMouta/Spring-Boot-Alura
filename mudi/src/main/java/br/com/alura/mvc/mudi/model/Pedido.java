@@ -85,6 +85,13 @@ public class Pedido {
 		this.status = status;		
 	}
 	
+	public List<Oferta> getOfertas() {
+		return ofertas;
+	}
+	public void setOfertas(List<Oferta> ofertas) {
+		this.ofertas = ofertas;
+	}
+	
 	public User getUser() {
 		return user;
 	}
