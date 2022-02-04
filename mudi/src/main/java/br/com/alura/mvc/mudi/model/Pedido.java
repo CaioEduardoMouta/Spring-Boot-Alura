@@ -39,6 +39,7 @@ public class Pedido {
 	private User user;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy ="pedido", fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Oferta> ofertas;
 	
 	public String getNomeProduto() {
@@ -81,8 +82,8 @@ public class Pedido {
 		return status;
 	}
 	
-	public void setStatus(StatusPedido aguardando) {
-		this.status = status;		
+	public void setStatus(StatusPedido status) {
+		this.status = status;
 	}
 	
 	public List<Oferta> getOfertas() {

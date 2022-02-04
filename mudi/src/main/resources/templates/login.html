@@ -1,28 +1,25 @@
 <html>
-<meta charset="UTF-8"/>
+	<meta charset="UTF-8"/>
 	<head th:replace="~{base :: head}"></head>
-	
 	<body>
 		<div th:replace="~{base :: logo}"></div>
-				
-			<div class="container">
-				<div th:replace="~{base :: titulo('Login')}"></div>
-			
-			
-				<div class="card mb-3" >
-					<form th:action="@{/login}" class="card-body" method="post">
+	
+		<div class="container">
+			<div th:replace="~{base :: titulo('Login')}"></div>
+		
+			<div class="card mb-3">
+				<form th:action="@{/login}" class="card-body" method="post">
 					<div class="form-group">
 						<label for="username">Usuário</label>
-						<input name="username" th:errorclass="is-invalid" class="form-control" placeholder="usuário"/>
+						<input name="username"  class="form-control" placeholder="usuário"/>
 					</div>
 					<div class="form-group">
 						<label for="password">Senha</label>
-						<input name="password" th:errorclass="is-invalid" class="form-control" placeholder="sua senha"/>
+						<input type="password" name="password" class="form-control" placeholder="senha"/>
 					</div>
 					<button class="btn btn-primary" type="submit">Login</button>
-					</form>
-					
-				</div>
-			</div>	
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
