@@ -17,8 +17,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
-	
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
 	@Autowired
 	private DataSource dataSource;
 	
@@ -27,38 +27,35 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 		.authorizeRequests()
 		.antMatchers("/home/**")
-		.permitAll()
-			.anyRequest().authenticated()
+			.permitAll()
+		.anyRequest()
+			.authenticated()
 		.and()
 		.formLogin(form -> form
-				.loginPage("/login")
-				.defaultSuccessUrl("/usuario/home",true)
-				.permitAll()
-			)
-		.logout(logout -> { 
-		logout.logoutUrl("/logout")
-		.logoutSuccessUrl("/home");
-		});
+            .loginPage("/login")
+            .defaultSuccessUrl("/usuario/pedido", true)
+            .permitAll()
+        )
+		.logout(logout -> {
+			logout.logoutUrl("/logout")
+				.logoutSuccessUrl("/home");
+		}).csrf().disable();
 	}
 	
-	@Override 
+	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//		
-//		UserDetails user = 
-//				User.builder()
-//				.username("marlene")
-//				.password(encoder.encode("esposa"))
-//				.roles("ADM")
-//				.build();
+		auth
+			.jdbcAuthentication()
+			.dataSource(dataSource)
+			.passwordEncoder(encoder);
 		
-		auth.jdbcAuthentication()
-		.dataSource(dataSource)
-		.passwordEncoder(encoder);
-//		.withUser(user);
+//		UserDetails user =
+//				 User.builder()
+//					.username("maria")
+//					.password(encoder.encode("maria"))
+//					.roles("ADM")
+//					.build();
 	}
 	
-
-
 }
-

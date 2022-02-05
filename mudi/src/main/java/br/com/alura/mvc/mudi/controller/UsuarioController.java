@@ -18,11 +18,9 @@ import br.com.alura.mvc.mudi.repository.PedidoRepository;
 @Controller
 @RequestMapping("usuario")
 public class UsuarioController {
-	
+
 	@Autowired
 	private PedidoRepository pedidoRepository;
-	
-
 	
 	@GetMapping("pedido")
 	public String home(Model model, Principal principal) {
@@ -32,16 +30,14 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("pedido/{status}")
-	public String porStatus(@PathVariable("status") String status,Model model, Principal principal) {
-		List<Pedido> pedidos = pedidoRepository.findByStatusAndUsers(StatusPedido.valueOf(status.toUpperCase()),
-				principal.getName());
-		
+	public String porStatus(@PathVariable("status") String status, Model model, Principal principal) {
+		List<Pedido> pedidos = pedidoRepository.findByStatusEUsuario(StatusPedido.valueOf(status.toUpperCase()), principal.getName());
 		model.addAttribute("pedidos", pedidos);
-		model.addAttribute("status",status);
+		model.addAttribute("status", status);
 		return "usuario/home";
 	}
 	
-	@ExceptionHandler(IllegalArgumentException.class) 
+	@ExceptionHandler(IllegalArgumentException.class)
 	public String onError() {
 		return "redirect:/usuario/home";
 	}

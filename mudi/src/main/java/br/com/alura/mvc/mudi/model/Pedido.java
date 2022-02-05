@@ -11,7 +11,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -37,8 +36,8 @@ public class Pedido {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnore
 	private User user;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy ="pedido", fetch = FetchType.LAZY)
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido", fetch = FetchType.LAZY)
 	@JsonIgnore
 	private List<Oferta> ofertas;
 	
@@ -78,14 +77,24 @@ public class Pedido {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public StatusPedido getStatus() {
 		return status;
 	}
-	
 	public void setStatus(StatusPedido status) {
 		this.status = status;
 	}
-	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public List<Oferta> getOfertas() {
 		return ofertas;
 	}
@@ -93,11 +102,4 @@ public class Pedido {
 		this.ofertas = ofertas;
 	}
 	
-	public User getUser() {
-		return user;
-	}
-	
-	public void setUser(User user) {
-		this.user = user;
-	}
 }
