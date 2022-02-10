@@ -29,6 +29,7 @@ public class Usuario implements UserDetails {
 	private String email;
 	private String senha;
 	
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
 
@@ -103,6 +104,8 @@ public class Usuario implements UserDetails {
 	public String getUsername() {
 		return this.email;
 	}
+	
+
 
 	@Override
 	public boolean isAccountNonExpired() {
