@@ -3,7 +3,7 @@ package br.com.alura.forum.config.security;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authentication;
+import org.springframework.security.core.Authentication;
 
 import br.com.alura.forum.modelo.Usuario;
 import io.jsonwebtoken.Jwts;
@@ -20,12 +20,13 @@ public class TokenService {
 	
 	
 	public String gerarToken(Authentication authentication) {
-		Usuario logado =  (Usuario) authentication.getPrincipal();
+		Usuario logado =(Usuario) authentication.getPrincipal();
 		Date hoje = new Date();
 		Date dataExpiracao = new Date (hoje.getTime() + Long.parseLong(expiration));
 		
 		
-		return Jwts.builder().setIssuer("API do Forum da Alura")
+		return Jwts.builder()
+				.setIssuer("API do Forum da Alura")
 				.setSubject(logado.getId().toString())
 				.setIssuedAt(hoje)
 				.setExpiration(dataExpiracao)
