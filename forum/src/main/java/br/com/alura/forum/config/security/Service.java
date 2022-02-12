@@ -5,12 +5,15 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 
+
+
 import br.com.alura.forum.modelo.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-public class TokenService {
+
+public class Service {
 	
 	@Value("${forum.jwt.expiration}")
 	private String expiration;
@@ -23,7 +26,7 @@ public class TokenService {
 	public String gerarToken(Authentication authentication) {
 		Usuario logado =(Usuario) authentication.getPrincipal();
 		Date hoje = new Date();
-		Date dataExpiracao = new Date (hoje.getTime() + Long.parseLong(expiration));
+		Date dataExpiracao = new Date(hoje.getTime() + Long.parseLong(expiration));
 		
 		
 		return Jwts.builder()

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.core.Authentication;
 
-import br.com.alura.forum.config.security.TokenService;
+import br.com.alura.forum.config.security.Service;
 import br.com.alura.forum.controller.dto.TokenDto;
 import br.com.alura.forum.controller.form.LoginForm;
 
@@ -26,7 +26,7 @@ public class AutenticaoController {
 	private AuthenticationManager authManager; 
 	
 	@Autowired
-	private TokenService tokenService;
+	private Service tokenService;
 	
 	@PostMapping
 	public ResponseEntity<?> aunteticar(@RequestBody @Valid LoginForm form) {

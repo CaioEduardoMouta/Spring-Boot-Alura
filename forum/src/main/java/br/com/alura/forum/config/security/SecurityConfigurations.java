@@ -27,7 +27,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
-	private TokenService tokenService;
+	private Service tokenService;
 	
 	@Override
 	@Bean
@@ -50,6 +50,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET,"/topicos").permitAll() 
 		.antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
 		.antMatchers(HttpMethod.POST, "/auth").permitAll()
+		//Excluir quando tiver em aplicação
+		.antMatchers(HttpMethod.GET, "/actuator").permitAll()
 		.anyRequest().authenticated()
 		.and().csrf().disable()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

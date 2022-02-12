@@ -8,21 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import br.com.alura.forum.modelo.Usuario;
 import br.com.alura.forum.repository.UsuarioRepository;
 
+
 public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
 	
-	private TokenService tokenService;
+	private Service tokenService;
 	private UsuarioRepository repository;
 	
 	
 
-	public AutenticacaoViaTokenFilter(TokenService tokenService, UsuarioRepository repository) {
+	public AutenticacaoViaTokenFilter(Service tokenService, UsuarioRepository repository) {
 		this.tokenService = tokenService;
 		this.repository = repository;
 		
@@ -43,8 +42,9 @@ public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
 
 	private void autenticarCliente(String token) {
 		Long idUsuario = tokenService.getIdUsuario(token);
+		Usuario usuario = repository.findById(idUsuario).get();		
 		UsernamePasswordAuthenticationToken authentication =
-				new UsernamePasswordAuthenticationToken(usuario, null, usuario.getPerfis());
+			new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
 	}
