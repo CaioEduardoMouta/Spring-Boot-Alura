@@ -1,5 +1,12 @@
 INSERT INTO USUARIO(nome, email, senha) VALUES('Aluno', 'aluno@email.com', '123456');
 INSERT INTO USUARIO(nome, email, senha) VALUES('Caio', 'caio@mouta.com', '123456');
+INSERT INTO USUARIO(nome, email, senha) VALUES('Moderador', 'moderador@mouta.com', '123456');
+
+INSERT INTO PERFIL(ID, NOME) VALUES(1, 'ROLE_ALUNO');
+INSERT INTO PERFIL(ID, NOME) VALUES(2, 'ROLE_MODERADOR');
+
+insert into USUARIO_PERFIS(USUARIO_ID, PERFIS_ID) VALUES(1,1);
+insert into USUARIO_PERFIS(USUARIO_ID, PERFIS_ID) VALUES(2,2);
 INSERT INTO CURSO(nome, categoria) VALUES('Spring Boot', 'Programação');
 INSERT INTO CURSO(nome, categoria) VALUES('HTML 5', 'Front-end');
 
