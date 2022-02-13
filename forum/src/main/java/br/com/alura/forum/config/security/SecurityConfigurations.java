@@ -12,9 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import br.com.alura.forum.repository.UsuarioRepository;
 
 @EnableWebSecurity
 @Configuration
@@ -23,11 +20,11 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private AutenticacaoService autenticacaoService;
 	
-	@Autowired
-	private UsuarioRepository usuarioRepository;
-	
-	@Autowired
-	private Service tokenService;
+//	@Autowired
+//	private UsuarioRepository usuarioRepository;
+//	
+//	@Autowired
+//	private Service tokenService;
 	
 	@Override
 	@Bean
@@ -54,16 +51,14 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/actuator").permitAll()
 		.anyRequest().authenticated()
 		.and().csrf().disable()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, usuarioRepository), UsernamePasswordAuthenticationFilter.class);
+		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
 	}
 	//Congirações de Recursos(js,css, html)
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		
+	    web.ignoring()
+	        .antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
 	}
-	
-	public static void main(String[] args) {
-		System.out.println(new BCryptPasswordEncoder().encode("123456"));
-	}
+
 }

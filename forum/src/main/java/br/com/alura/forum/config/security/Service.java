@@ -12,7 +12,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-
+@org.springframework.stereotype.Service
 public class Service {
 	
 	@Value("${forum.jwt.expiration}")
@@ -51,7 +51,7 @@ public class Service {
 
 
 	public Long getIdUsuario(String token) {
-		Claims claims =Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();
+		Claims claims = Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();
 		return Long.parseLong(claims.getSubject());
 	}
 
